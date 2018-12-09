@@ -33,22 +33,20 @@ hr {
 }
 article {
   padding: 0.5rem 1rem;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   line-height: 1.5rem;
 }
 article p {
   text-indent: 2rem;
 }
 article h1 {
-  font-size: 1.5rem;
   font-weight: normal;
-}
-article h2 {
   font-size: 1.25rem;
-  font-weight: normal;
+  letter-spacing: 0.25rem;
+  margin: 1rem;
 }
 article hr {
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 article ul {
   padding-left: 2rem;
@@ -65,6 +63,7 @@ article .footage {
 article .vol {
   color: #666;
   font-size: 1rem;
+  letter-spacing: 0;
 }
 .link-list-item {
   display: inline-block;
