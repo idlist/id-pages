@@ -37,6 +37,29 @@ article {
   text-indent: 2rem;
   line-height: 1.5rem;
 }
+article h1 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+article h2 {
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+article hr {
+  margin-bottom: 1rem;
+}
+article ul {
+  padding-left: 2rem;
+}
+article ul li p {
+  text-indent: 0;
+  margin-left: 1rem;
+}
+article .footage {
+  color: #666;
+  font-size: 0.8rem;
+  text-align: right;
+}
 .link-list-item {
   display: inline-block;
   width: 50%;
@@ -90,12 +113,6 @@ article {
   opacity: 0;
   animation: article-appear 0.5s;
   animation-fill-mode: forwards;
-}
-.hp-a-init .footage,
-.hp-a-delay .footage {
-  color: #666;
-  font-size: 0.8rem;
-  text-align: right;
 }
 .hp-a-delay {
   animation-delay: 0.5s;
