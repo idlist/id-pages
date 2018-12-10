@@ -9,6 +9,15 @@
   font-size: 16px;
   color: #333;
 }
+p,
+span,
+th,
+td,
+input,
+a,
+button {
+  font-size: 1rem;
+}
 p {
   margin: 0;
   padding: 0;

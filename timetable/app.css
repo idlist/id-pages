@@ -9,6 +9,15 @@
   font-size: 16px;
   color: #333;
 }
+p,
+span,
+th,
+td,
+input,
+a,
+button {
+  font-size: 1rem;
+}
 p {
   margin: 0;
   padding: 0;
@@ -67,7 +76,7 @@ article .vol {
 }
 .container {
   max-width: 100%;
-  min-width: 1200px;
+  min-width: 1024px;
 }
 .schedule {
   width: 100%;
@@ -79,7 +88,6 @@ article .vol {
 .schedule th {
   border: 1px solid #333;
   padding: 0.5rem 1rem;
-  font-size: 1rem;
 }
 .schedule th {
   min-height: 2rem;
@@ -95,7 +103,6 @@ article .vol {
 }
 .course-info p {
   margin: 0;
-  font-size: 1rem;
   text-transform: capitalize;
 }
 .course-info .name {
@@ -118,14 +125,12 @@ article .vol {
   margin: 0.5rem;
 }
 .week-num input {
-  font-size: 1rem;
   width: 4rem;
   border: none;
   border-bottom: 1px solid #333;
   border-radius: 0;
 }
 button {
-  font-size: 1rem;
   font-family: 'Segoe UI', 'Helvetica Neue', 'Arial', 'Microsoft YaHei', sans-serif;
   background: none;
   color: #333;
