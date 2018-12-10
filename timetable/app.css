@@ -1,0 +1,141 @@
+.container {
+  font-family: 'Segoe UI', 'Helvetica Neue', 'Arial', 'Microsoft YaHei', sans-serif;
+  max-width: 768px;
+  margin: 0;
+  padding: 0;
+  margin: 0 auto;
+}
+* {
+  font-size: 16px;
+  color: #333;
+}
+p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.75rem;
+}
+a {
+  color: #333;
+  transition: 0.25s;
+}
+a:hover {
+  color: #999;
+}
+a:focus {
+  color: #82a586;
+}
+a:active {
+  color: #ccc;
+}
+hr {
+  border: none;
+  border-bottom: 1px solid #666;
+}
+article {
+  padding: 0.5rem 1rem;
+  letter-spacing: 1px;
+  line-height: 1.5rem;
+}
+article p {
+  text-indent: 2rem;
+}
+article h1 {
+  font-weight: normal;
+  font-size: 1.25rem;
+  letter-spacing: 0.25rem;
+  margin: 1rem;
+}
+article hr {
+  margin: 1rem 0;
+}
+article ul {
+  padding-left: 2rem;
+}
+article ul li p {
+  text-indent: 0;
+  margin-left: 1rem;
+}
+article .footage {
+  color: #666;
+  font-size: 0.8rem;
+  text-align: right;
+}
+article .vol {
+  color: #666;
+  font-size: 1rem;
+  letter-spacing: 0;
+}
+.container {
+  max-width: 100%;
+  min-width: 1024px;
+}
+.schedule {
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 0.25rem;
+}
+.schedule tr,
+.schedule td,
+.schedule th {
+  border: 1px solid #333;
+  padding: 0.5rem 1rem;
+}
+.schedule th {
+  min-height: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+}
+.schedule td {
+  min-height: 3rem;
+}
+.course-section {
+  text-align: center;
+  max-width: 2rem;
+}
+.course-info p {
+  margin: 0;
+  text-transform: capitalize;
+}
+.course-info .name {
+  text-decoration: underline;
+  text-align: center;
+}
+.course-info .type {
+  text-align: center;
+  font-style: italic;
+}
+.course-info .teacher {
+  color: #5c9864;
+}
+.course-info .place {
+  color: #5865a5;
+}
+.weekend,
+.week-num {
+  text-align: center;
+  margin: 0.5rem;
+}
+.week-num input {
+  width: 4rem;
+  border: none;
+  border-bottom: 1px solid #333;
+}
+button {
+  font-family: 'Segoe UI', 'Helvetica Neue', 'Arial', 'Microsoft YaHei', sans-serif;
+  background: none;
+  color: #333;
+  border: 1px solid #333;
+  padding: 0.25rem;
+  margin: 0 0.125rem;
+  min-width: 2rem;
+  cursor: pointer;
+}
+button:hover {
+  border-color: #999;
+  color: #999;
+}
+button:active {
+  border-color: #5c9864;
+  color: #5c9864;
+}
+
