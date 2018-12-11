@@ -1,27 +1,19 @@
 .container {
-  font-family: 'Segoe UI', 'Helvetica Neue', 'Arial', 'Microsoft YaHei', sans-serif;
   max-width: 768px;
   margin: 0;
   padding: 0;
   margin: 0 auto;
 }
-* {
+*,
+.body {
+  font-family: 'Segoe UI', 'Helvetica Neue', 'Arial', 'Microsoft YaHei', sans-serif;
   font-size: 16px;
   color: #333;
-}
-p,
-span,
-th,
-td,
-input,
-a,
-button {
-  font-size: 1rem;
 }
 p {
   margin: 0;
   padding: 0;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 a {
   color: #333;
@@ -43,36 +35,18 @@ hr {
 article {
   padding: 0.5rem 1rem;
   letter-spacing: 1px;
-  line-height: 1.5rem;
+  line-height: 1.75rem;
 }
 article p {
   text-indent: 2rem;
-}
-article h1 {
-  font-weight: normal;
-  font-size: 1.25rem;
-  letter-spacing: 0.25rem;
-  margin: 1rem;
-}
-article hr {
-  margin: 1rem 0;
-}
-article ul {
-  padding-left: 2rem;
-}
-article ul li p {
-  text-indent: 0;
-  margin-left: 1rem;
 }
 article .footage {
   color: #666;
   font-size: 0.8rem;
   text-align: right;
 }
-article .vol {
-  color: #666;
-  font-size: 1rem;
-  letter-spacing: 0;
+body {
+  font-size: 16px;
 }
 .container {
   max-width: 100%;
@@ -131,7 +105,6 @@ article .vol {
   border-radius: 0;
 }
 button {
-  font-family: 'Segoe UI', 'Helvetica Neue', 'Arial', 'Microsoft YaHei', sans-serif;
   background: none;
   color: #333;
   border: 1px solid #333;
