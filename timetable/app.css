@@ -75,6 +75,9 @@ body {
   text-align: center;
   max-width: 2rem;
 }
+.course-info {
+  position: relative;
+}
 .course-info p {
   margin: 0;
   text-transform: capitalize;
@@ -92,6 +95,16 @@ body {
 }
 .course-info .place {
   color: #5865a5;
+}
+.course-info .section-num {
+  position: absolute;
+  top: 0;
+  right: 0.5rem;
+  z-index: -1;
+  color: #ddd;
+  font-weight: bold;
+  font-size: 3rem;
+  font-style: italic;
 }
 .weekend,
 .week-num {
