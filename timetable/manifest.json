@@ -1,0 +1,16 @@
+{
+  "name": "Timetable",
+  "short_name": "Timetable",
+  "display": "standalone",
+  "start_url": "./",
+  "scope:": "./",
+  "theme_color": "#ceeed0",
+  "background_color": "#ceeed0",
+  "icons": [
+    {
+      "src": "./../static/idlist.png",
+      "type": "image/png",
+      "size": "500x500"
+    }
+  ]
+}
