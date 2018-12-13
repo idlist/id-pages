@@ -51,12 +51,12 @@ body {
 .container {
   max-width: 100%;
   min-width: 1024px;
+  margin: 1rem 0;
 }
 .schedule {
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
-  margin-bottom: 2rem;
 }
 .schedule tr,
 .schedule td,
@@ -137,6 +137,7 @@ body {
   border: none;
   border-bottom: 1px solid #333;
   border-radius: 0;
+  text-align: center;
 }
 button {
   background: none;
