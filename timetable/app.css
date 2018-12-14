@@ -62,10 +62,9 @@ body {
 .schedule td,
 .schedule th {
   border: none;
-  padding: 0.75rem 1rem;
 }
 .schedule th {
-  padding-bottom: 0.25rem;
+  padding: 0.25rem 1rem;
   min-height: 2rem;
   text-transform: uppercase;
   letter-spacing: 0.25rem;
@@ -74,11 +73,14 @@ body {
   margin: 0.25rem 0;
 }
 .schedule th .grey {
-  color: rgba(0,0,0,0.6);
+  color: rgba(0,0,0,0.625);
 }
 .schedule td {
-  min-height: 4rem;
   position: relative;
+  padding: 0.75rem 1rem;
+}
+.schedule td p {
+  margin: 0;
 }
 .schedule tr,
 .schedule td {
@@ -96,12 +98,14 @@ body {
 }
 .course-section {
   text-align: center;
+  padding: 2rem 1rem !important;
 }
-.course-section p {
-  margin: 0;
+.course-section .section-time {
+  letter-spacing: 0.25rem;
+  font-weight: bold;
+  color: rgba(0,0,0,0.625);
 }
 .course-info p {
-  margin: 0;
   text-transform: capitalize;
 }
 .course-info .name {
