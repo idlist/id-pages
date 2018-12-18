@@ -542,6 +542,8 @@ article .footage {
 .hp-event p {
   letter-spacing: 1px;
   text-indent: 0;
+  margin-left: 2rem;
+  margin-right: 0.5rem;
 }
 .hp-event h1 {
   font-weight: normal;
@@ -551,20 +553,10 @@ article .footage {
 }
 .hp-event h2 {
   font-size: 1rem;
+  margin-left: rem;
 }
 .hp-event h2:before {
   content: '\25A0\3000';
-}
-.hp-event h3 {
-  font-size: 1rem;
-  font-weight: normal;
-  text-align: center;
-}
-.hp-event h3:before {
-  content: '\25B7\3000';
-}
-.hp-event h3:after {
-  content: '\3000\25C1';
 }
 .hp-event hr {
   margin: 1rem 0;
