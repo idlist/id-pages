@@ -55,7 +55,7 @@ article .footage {
   transition: 0.25s;
 }
 .section h6 .rotated {
-  transform: rotate(90deg) translateX(2px);
+  transform: rotate(90deg) translateX(2px) translateY(-2px);
 }
 .section h6 .title {
   margin-left: 0.5rem;
