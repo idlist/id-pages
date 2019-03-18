@@ -1,0 +1,89 @@
+.container {
+  max-width: 768px;
+  margin: 0;
+  padding: 0;
+  margin: 0 auto;
+}
+* {
+  font-family: 'Segoe UI', 'Helvetica Neue', 'Arial', 'Microsoft YaHei', sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
+a {
+  color: #333;
+  transition: 0.25s;
+}
+a:hover {
+  color: #999;
+}
+a:focus {
+  color: #82a586;
+}
+a:active {
+  color: #ccc;
+}
+hr {
+  border: none;
+  border-bottom: 1px solid #666;
+}
+article {
+  padding: 0.5rem 1rem;
+  letter-spacing: 1px;
+  line-height: 1.75rem;
+}
+article .footage {
+  color: #666;
+  font-size: 0.8rem;
+  text-align: right;
+}
+.section {
+  border: 1px solid #333;
+  margin-bottom: 0.5rem;
+}
+.section h6 {
+  font-weight: normal;
+  margin: 0.75rem 1rem;
+  cursor: pointer;
+}
+.section h6 .arrow {
+  display: inline-block;
+  transition: 0.25s;
+}
+.section h6 .rotated {
+  transform: rotate(90deg) translateX(2px);
+}
+.section h6 .title {
+  margin-left: 0.5rem;
+}
+.section .content {
+  margin: 0.75rem 1rem;
+}
+.section .hidden {
+  display: none;
+}
+.feedings {
+  border-collapse: collapse;
+}
+.feedings td {
+  padding: 0.25rem 0.5rem;
+}
+.feedings .day,
+.feedings .thing {
+  border-right: 1px solid #333;
+}
+.feedings .day {
+  min-width: 2.5rem;
+}
+.feedings .thing {
+  min-width: 1rem;
+  text-align: center;
+}
+.feedings-link {
+  margin-left: 0.5rem;
+}
+
