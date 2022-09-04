@@ -1,8 +1,9 @@
-import m from 'mithril'
-import './about.sass'
-import SectionTitle from './section-title'
+import m from 'mithril';
+import './about.sass';
+import SectionTitle from './section-title';
+import LastUpdate from '../last-update';
 
-import icon_un1c0de from '@assets/links/un1c0de.png'
+import icon_un1c0de from '@assets/links/un1c0de.png';
 
 interface LinksListItem {
   site: string,
@@ -14,9 +15,9 @@ const LinksList: LinksListItem[] = [
   {
     site: 'UN1C0DE',
     icon: 'un1c0de',
-    link: icon_un1c0de
-  }
-]
+    link: icon_un1c0de,
+  },
+];
 
 const About: m.ClosureComponent = () => {
   return {
@@ -32,16 +33,16 @@ const About: m.ClosureComponent = () => {
                 href: item.link,
                 title: item.site,
                 target: '_blank',
-                rel: 'noopener noreferer'
+                rel: 'noopener noreferer',
               }, [
                 m('img', {
                   class: 'contents-link-image',
                   src: item.link,
-                  alt: item.site
-                })
-              ])
-            ])
-          ])
+                  alt: item.site,
+                }),
+              ]),
+            ]),
+          ]),
         ]),
         m('footer', { class: 'footer' }, [
           m('div', { class: 'credits' }, [
@@ -49,15 +50,15 @@ const About: m.ClosureComponent = () => {
             m('a', {
               class: 'credits-email',
               href: 'mailto:me@idl.ist',
-              rel: 'noopener noreferer'
+              rel: 'noopener noreferer',
             }, 'me@idl.ist'),
             m('div', { class: 'credits-divider' }),
-            m('div', 'Last Update: 2022 / 1 / 14')
-          ])
-        ])
-      ]
-    }
-  }
-}
+            m('div', `Last Update: ${LastUpdate}`),
+          ]),
+        ]),
+      ];
+    },
+  };
+};
 
-export default About
+export default About;

@@ -1,9 +1,9 @@
-import m from 'mithril'
-import './root-layout.sass'
-import Header from './header'
-import MasteryTree from './mastery-tree'
-import SkillWishlist from './skill-wishlist'
-import About from './about'
+import m from 'mithril';
+import './root-layout.sass';
+import Header from './header';
+import MasteryTree from './mastery-tree';
+import SkillWishlist from './skill-wishlist';
+import About from './about';
 
 const RootLayout: m.ClosureComponent = () => {
   return {
@@ -13,11 +13,11 @@ const RootLayout: m.ClosureComponent = () => {
           m(Header),
           m(MasteryTree),
           m(SkillWishlist),
-          m(About)
-        ])
-      ]
-    }
-  }
-}
+          m(About),
+        ]),
+      ];
+    },
+  };
+};
 
-export default RootLayout
+export default RootLayout;

@@ -1,23 +1,25 @@
-import m from 'mithril'
-import './mastery-tree.sass'
-import SectionTitle from './section-title'
+import m from 'mithril';
+import './mastery-tree.sass';
+import SectionTitle from './section-title';
 
-import svg_star from '@assets/skill-bar/star.svg'
-import svg_heart from '@assets/skill-bar/heart.svg'
-import icon_chinese from '@assets/skill-icons/chinese.svg'
-import icon_english from '@assets/skill-icons/english.svg'
-import icon_japanese from '@assets/skill-icons/japanese.svg'
-import icon_mithril from '@assets/skill-icons/mithril.svg'
-import icon_react from '@assets/skill-icons/react.svg'
-import icon_vue from '@assets/skill-icons/vue.svg'
-import icon_sass from '@assets/skill-icons/sass.svg'
-import icon_vite from '@assets/skill-icons/vite.svg'
-import icon_koishi from '@assets/skill-icons/koishi.svg'
-import icon_godot from '@assets/skill-icons/godot.svg'
-import icon_digital_art from '@assets/skill-icons/digital-art.svg'
-import icon_ui from '@assets/skill-icons/ui.svg'
-import icon_vector_graphics from '@assets/skill-icons/vector-graphics.svg'
-import icon_live from '@assets/skill-icons/live.svg'
+import svg_star from '@assets/skill-bar/star.svg';
+import svg_heart from '@assets/skill-bar/heart.svg';
+import icon_chinese from '@assets/mastery-tree/chinese.svg';
+import icon_english from '@assets/mastery-tree/english.svg';
+import icon_japanese from '@assets/mastery-tree/japanese.svg';
+import icon_mithril from '@assets/mastery-tree/mithril.svg';
+import icon_react from '@assets/mastery-tree/react.svg';
+import icon_vue from '@assets/mastery-tree/vue.svg';
+import icon_sass from '@assets/mastery-tree/sass.svg';
+import icon_vite from '@assets/mastery-tree/vite.svg';
+import icon_godot from '@assets/mastery-tree/godot.svg';
+import icon_typescript from '@assets/mastery-tree/typescript.svg';
+import icon_python from '@assets/mastery-tree/python.svg';
+import icon_cpp from '@assets/mastery-tree/cpp.svg';
+import icon_digital_art from '@assets/mastery-tree/digital-art.svg';
+import icon_ui from '@assets/mastery-tree/ui.svg';
+import icon_vector_graphics from '@assets/mastery-tree/vector-graphics.svg';
+import icon_live from '@assets/mastery-tree/live.svg';
 
 interface TreeItem {
   name: string
@@ -44,80 +46,92 @@ const TreeList: TreeAspect[] = [
       {
         name: 'Chinese (native)',
         icon: icon_chinese,
-        level: 5
+        level: 5,
       },
       {
         name: 'English',
         icon: icon_english,
-        level: 4
+        level: 4,
       },
       {
         name: 'Japanese',
         icon: icon_japanese,
-        level: 3
-      }
-    ]
+        level: 3,
+      },
+    ],
   },
   {
     title: 'JS / Node.js',
-    level: 4.5,
+    level: 5,
     color: '#6E552F',
     contents: [
       {
         name: 'Mithril.js',
         icon: icon_mithril,
-        level: 4,
+        level: 4.5,
         fav: true,
-        link: 'https://mithril.js.org/'
+        link: 'https://mithril.js.org/',
       },
       {
         name: 'React',
         icon: icon_react,
         level: 3,
-        link: 'https://reactjs.org/'
+        link: 'https://reactjs.org/',
       },
       {
-        name: 'Vue.js',
+        name: 'Vue',
         icon: icon_vue,
         level: 1,
-        link: 'https://v3.vuejs.org/'
+        link: 'https://v3.vuejs.org/',
       },
       {
         name: 'Sass',
         icon: icon_sass,
-        level: 3.5,
-        link: 'https://sass-lang.com/'
+        level: 4,
+        link: 'https://sass-lang.com/',
       },
       {
         name: 'Vite',
         icon: icon_vite,
         level: 3,
-        link: 'https://vitejs.dev/'
+        link: 'https://vitejs.dev/',
       },
-      {
-        name: 'Koishi.js',
-        icon: icon_koishi,
-        level: 4.5,
-        fav: true,
-        link: 'https://koishi.js.org/'
-      }
-    ]
+    ],
   },
   {
     title: 'C#',
-    level: 1,
-    new: true,
+    level: 2,
     color: '#096148',
     contents: [
       {
         name: 'Godot',
         icon: icon_godot,
-        level: 0.8,
-        new: true,
+        level: 1.5,
         fav: true,
-        link: 'https://godotengine.org/'
-      }
-    ]
+        link: 'https://godotengine.org/',
+      },
+    ],
+  },
+  {
+    title: 'Other Programmings',
+    contents: [
+      {
+        name: 'TypeScript',
+        icon: icon_typescript,
+        level: 4,
+      },
+      {
+        name: 'Python',
+        icon: icon_python,
+        level: 3,
+      },
+      {
+        name: 'C++',
+        icon: icon_cpp,
+        level: 1,
+        new: true,
+      },
+    ],
   },
   {
     title: 'Graphics',
@@ -127,21 +141,21 @@ const TreeList: TreeAspect[] = [
       {
         name: 'Digital Art',
         icon: icon_digital_art,
-        level: 1,
-        fav: true
+        level: 1.5,
+        fav: true,
       },
       {
-        name: 'UI',
+        name: 'UI / UX',
         icon: icon_ui,
         level: 3,
-        fav: true
+        fav: true,
       },
       {
         name: 'Vector Graphics',
         icon: icon_vector_graphics,
-        level: 2
-      }
-    ]
+        level: 2,
+      },
+    ],
   },
   {
     title: 'Desktop Music',
@@ -152,11 +166,11 @@ const TreeList: TreeAspect[] = [
         name: 'Live',
         icon: icon_live,
         level: 2,
-        link: 'https://www.ableton.com/en/live/'
-      }
-    ]
-  }
-]
+        link: 'https://www.ableton.com/en/live/',
+      },
+    ],
+  },
+];
 
 interface SkillLevelAttrs {
   level: number
@@ -167,39 +181,39 @@ interface SkillLevelAttrs {
 const SkillBar: m.ClosureComponent<SkillLevelAttrs> = () => {
   return {
     view({ attrs }) {
-      const width = attrs.width ?? 160
-      const height = 24
-      const margin = 12
-      const length = width - 2 * margin
+      const width = attrs.width ?? 160;
+      const height = 24;
+      const margin = 12;
+      const length = width - 2 * margin;
 
-      const styleLine = { stroke: '#ccc', strokeWidth: 2 }
-      const stylePoint = { fill: '#ccc' }
+      const styleLine = { stroke: '#ccc', strokeWidth: 2 };
+      const stylePoint = { fill: '#ccc' };
 
       return [
         m('svg', {
           width: width, height: height,
-          class: 'skill-bar'
+          class: 'skill-bar',
         }, [
           m('line', {
             x1: margin, y1: margin,
             x2: width - margin, y2: margin,
-            style: styleLine
+            style: styleLine,
           }),
           ...[0, 1].map(i => {
-            const lx = Math.round(margin + length * i)
+            const lx = Math.round(margin + length * i);
 
             return [
               m('line', {
                 x1: lx, y1: 6,
                 x2: lx, y2: 18,
-                style: styleLine
-              })
-            ]
+                style: styleLine,
+              }),
+            ];
           }),
           ...[1, 2, 3, 4].map(i => {
-            const size = 5
-            const px = Math.round(margin + length / 5 * i)
-            const py = height / 2
+            const size = 5;
+            const px = Math.round(margin + length / 5 * i);
+            const py = height / 2;
 
             return [
               m('rect', {
@@ -208,20 +222,20 @@ const SkillBar: m.ClosureComponent<SkillLevelAttrs> = () => {
                 width: size,
                 height: size,
                 style: stylePoint,
-                transform: `rotate(45, ${px}, ${py})`
-              })
-            ]
+                transform: `rotate(45, ${px}, ${py})`,
+              }),
+            ];
           }),
           m('image', {
             x: margin + length / 5 * attrs.level - 8, y: 4,
             width: 16, height: 16,
-            href: attrs.fav ? svg_heart : svg_star
-          })
-        ])
-      ]
-    }
-  }
-}
+            href: attrs.fav ? svg_heart : svg_star,
+          }),
+        ]),
+      ];
+    },
+  };
+};
 
 type MasteryItemNameAttrs = TreeItem
 
@@ -234,18 +248,18 @@ const MasteryItemName: m.ClosureComponent<MasteryItemNameAttrs> = () => {
             m('img', {
               class: 'item-icon-image',
               src: attrs.icon,
-              alt: attrs.name
-            })
-          ]
+              alt: attrs.name,
+            }),
+          ],
         ]),
         m('div', { class: attrs.link && 'item-link-text' }, attrs.name),
         attrs.new && [
-          m('div', { class: 'item-new' }, 'NEW')
-        ]
-      ]
-    }
-  }
-}
+          m('div', { class: 'item-new' }, 'NEW'),
+        ],
+      ];
+    },
+  };
+};
 
 type MasteryItemAttrs = TreeItem
 
@@ -260,28 +274,28 @@ const MasteryItem: m.ClosureComponent<MasteryItemAttrs> = () => {
                 class: 'item-link',
                 href: attrs.link,
                 target: '_blank',
-                rel: 'noopener noreferer'
+                rel: 'noopener noreferer',
               }, [
-                m(MasteryItemName, { ...attrs })
-              ])
+                m(MasteryItemName, { ...attrs }),
+              ]),
             ]
             : [
               m('div', { class: 'item-info' }, [
-                m(MasteryItemName, { ...attrs })
-              ])
+                m(MasteryItemName, { ...attrs }),
+              ]),
             ]
           ,
           attrs.level && [
             m(SkillBar, {
               level: attrs.level,
-              fav: attrs.fav
-            })
-          ]
-        ])
-      ]
-    }
-  }
-}
+              fav: attrs.fav,
+            }),
+          ],
+        ]),
+      ];
+    },
+  };
+};
 
 type MasteryTreeAspectAttrs = TreeAspect
 
@@ -294,29 +308,29 @@ const MasteryTreeAspect: m.ClosureComponent<MasteryTreeAspectAttrs> = () => {
             class: 'aspect-container',
             style: {
               backgroundColor: attrs.color,
-              boxShadow: `0 0 8px ${attrs.color}`
-            }
+              boxShadow: `0 0 8px ${attrs.color}`,
+            },
           }, [
             m('div', { class: 'aspect-info' }, [
               m('div', { class: 'aspect-title' }, attrs.title),
               attrs.new && [
-                m('div', { class: 'aspect-new' }, 'NEW')
-              ]
+                m('div', { class: 'aspect-new' }, 'NEW'),
+              ],
             ]),
             attrs.level && [
-              m(SkillBar, { level: attrs.level })
-            ]
+              m(SkillBar, { level: attrs.level }),
+            ],
           ]),
           m('div', { class: 'aspect-content' }, [
             ...attrs.contents.map(item => [
-              m(MasteryItem, { ...item })
-            ])
-          ])
-        ])
-      ]
-    }
-  }
-}
+              m(MasteryItem, { ...item }),
+            ]),
+          ]),
+        ]),
+      ];
+    },
+  };
+};
 
 const MasteryTree: m.ClosureComponent = () => {
   return {
@@ -325,12 +339,12 @@ const MasteryTree: m.ClosureComponent = () => {
         m(SectionTitle, { title: 'Mastery Tree' }),
         m('div', { class: 'mastery-tree' }, [
           ...TreeList.map(aspect => [
-            m(MasteryTreeAspect, { ...aspect })
-          ])
-        ])
-      ]
-    }
-  }
-}
+            m(MasteryTreeAspect, { ...aspect }),
+          ]),
+        ]),
+      ];
+    },
+  };
+};
 
-export default MasteryTree
+export default MasteryTree;

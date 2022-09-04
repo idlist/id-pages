@@ -1,12 +1,12 @@
-import m from 'mithril'
-import './header.sass'
+import m from 'mithril';
+import './header.sass';
 
-import image_idlist from '@assets/idlist.png'
-import icon_email from '@assets/icons/email.svg'
-import icon_blog from '@assets/icons/blog.svg'
-import icon_twitter from '@assets/icons/twitter.svg'
-import icon_github from '@assets/icons/github.svg'
-import icon_soundcloud from '@assets/icons/soundcloud.svg'
+import image_idlist from '@assets/idlist.png';
+import icon_email from '@assets/icons/email.svg';
+import icon_blog from '@assets/icons/blog.svg';
+import icon_twitter from '@assets/icons/twitter.svg';
+import icon_github from '@assets/icons/github.svg';
+import icon_soundcloud from '@assets/icons/soundcloud.svg';
 
 interface ContactListItemAttrs {
   name: string
@@ -22,16 +22,16 @@ const ContactListContents: ContactListItemAttrs[] = [
     icon: icon_email,
     id: 'me@idl.ist',
     color: '#3A8FB7',
-    link: 'mailto:me@idl.ist'
+    link: 'mailto:me@idl.ist',
   },
   {
     name: 'Blog',
     icon: icon_blog,
     color: '#00887d',
     id: 'Reinventing the Wheel',
-    link: 'https://blog.idl.ist/'
-  }
-]
+    link: 'https://blog.idl.ist/',
+  },
+];
 
 const SocialMediaContents: ContactListItemAttrs[] = [
   {
@@ -39,23 +39,23 @@ const SocialMediaContents: ContactListItemAttrs[] = [
     icon: icon_twitter,
     id: '@i_dlist',
     color: '#58B2DC',
-    link: 'https://twitter.com/i_dlist'
+    link: 'https://twitter.com/i_dlist',
   },
   {
     name: 'GitHub',
     icon: icon_github,
     color: '#6F3381',
     id: 'i\'DLisT',
-    link: 'https://github.com/idlist'
+    link: 'https://github.com/idlist',
   },
   {
     name: 'SoundCloud',
     icon: icon_soundcloud,
     id: 'i\'DLisT',
     color: '#ED784A',
-    link: 'https://soundcloud.com/idlist'
-  }
-]
+    link: 'https://soundcloud.com/idlist',
+  },
+];
 
 const ContactListItem: m.ClosureComponent<ContactListItemAttrs> = () => {
   return {
@@ -64,25 +64,25 @@ const ContactListItem: m.ClosureComponent<ContactListItemAttrs> = () => {
         m('a', {
           class: 'contact-list-item',
           href: attrs.link,
-          rel: 'noopener noreferer'
+          rel: 'noopener noreferer',
         }, [
           m('div', { class: 'item-icon' }, [
             m('img', {
               class: 'item-icon-image',
               src: attrs.icon,
-              alt: attrs.name
-            })
+              alt: attrs.name,
+            }),
           ]),
           m('div', {
             class: 'item-name',
-            style: { backgroundColor: attrs.color }
+            style: { backgroundColor: attrs.color },
           }, attrs.name),
-          m('div', { class: 'item-id' }, attrs.id)
-        ])
-      ]
-    }
-  }
-}
+          m('div', { class: 'item-id' }, attrs.id),
+        ]),
+      ];
+    },
+  };
+};
 
 const Header: m.ClosureComponent = () => {
   return {
@@ -93,22 +93,22 @@ const Header: m.ClosureComponent = () => {
             m('img', {
               class: 'header-icon-image',
               src: image_idlist,
-              alt: 'idlist-icon'
-            })
+              alt: 'idlist-icon',
+            }),
           ]),
           m('div', { class: 'contact-list' }, [
             ...ContactListContents.map(item => [
-              m(ContactListItem, { ...item })
+              m(ContactListItem, { ...item }),
             ]),
             m('hr', { class: 'contact-list-divider' }),
             ...SocialMediaContents.map(item => [
-              m(ContactListItem, { ...item })
-            ])
-          ])
-        ])
-      ]
-    }
-  }
-}
+              m(ContactListItem, { ...item }),
+            ]),
+          ]),
+        ]),
+      ];
+    },
+  };
+};
 
-export default Header
+export default Header;
