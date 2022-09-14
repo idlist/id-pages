@@ -1,11 +1,11 @@
-import m from 'mithril';
-import './skill-wishlist.sass';
-import SectionTitle from './section-title';
+import m from 'mithril'
+import './skill-wishlist.sass'
+import SectionTitle from './section-title'
 
-import icon_dart from '@assets/skill-wishlist/dart.svg';
-import icon_flutter from '@assets/skill-wishlist/flutter.svg';
-import icon_rust from '@assets/skill-wishlist/rust.svg';
-import icon_blender from '@assets/skill-wishlist/blender.svg';
+import icon_dart from '@assets/skill-wishlist/dart.svg'
+import icon_flutter from '@assets/skill-wishlist/flutter.svg'
+import icon_rust from '@assets/skill-wishlist/rust.svg'
+import icon_blender from '@assets/skill-wishlist/blender.svg'
 
 interface WishlistSkill {
   name: string
@@ -34,7 +34,7 @@ const WishlistContent: WishlistSkill[] = [
     icon: icon_blender,
     link: 'https://www.blender.org/',
   },
-];
+]
 
 type SkillItemNameAttrs = WishlistSkill
 
@@ -52,10 +52,10 @@ const SkillItemName: m.ClosureComponent<SkillItemNameAttrs> = () => {
           ],
         ]),
         m('div', { class: attrs.link && 'item-link-text' }, attrs.name),
-      ];
+      ]
     },
-  };
-};
+  }
+}
 
 type SkillItemAttrs = WishlistSkill
 
@@ -79,10 +79,10 @@ const SkillItem: m.ClosureComponent<SkillItemAttrs> = () => {
               m(SkillItemName, { ...attrs }),
             ]),
           ],
-      ];
+      ]
     },
-  };
-};
+  }
+}
 
 const SkillWishlist: m.ClosureComponent = () => {
   return {
@@ -100,9 +100,9 @@ const SkillWishlist: m.ClosureComponent = () => {
             m('p', 'to take a look at them...'),
           ]),
         ]),
-      ];
+      ]
     },
-  };
-};
+  }
+}
 
-export default SkillWishlist;
+export default SkillWishlist

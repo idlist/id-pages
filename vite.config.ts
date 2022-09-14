@@ -1,6 +1,6 @@
-import { cwd } from 'process';
-import { resolve } from 'path';
-import { defineConfig } from 'vite';
+import { cwd } from 'process'
+import { resolve } from 'path'
+import { defineConfig } from 'vite'
 
 export default defineConfig({
   resolve: {
@@ -9,4 +9,4 @@ export default defineConfig({
       { find: '@components', replacement: `${resolve(cwd(), 'src/components')}` },
     ],
   },
-});
+})

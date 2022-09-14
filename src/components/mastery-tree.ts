@@ -1,25 +1,25 @@
-import m from 'mithril';
-import './mastery-tree.sass';
-import SectionTitle from './section-title';
+import m from 'mithril'
+import './mastery-tree.sass'
+import SectionTitle from './section-title'
 
-import svg_star from '@assets/skill-bar/star.svg';
-import svg_heart from '@assets/skill-bar/heart.svg';
-import icon_chinese from '@assets/mastery-tree/chinese.svg';
-import icon_english from '@assets/mastery-tree/english.svg';
-import icon_japanese from '@assets/mastery-tree/japanese.svg';
-import icon_mithril from '@assets/mastery-tree/mithril.svg';
-import icon_react from '@assets/mastery-tree/react.svg';
-import icon_vue from '@assets/mastery-tree/vue.svg';
-import icon_sass from '@assets/mastery-tree/sass.svg';
-import icon_vite from '@assets/mastery-tree/vite.svg';
-import icon_godot from '@assets/mastery-tree/godot.svg';
-import icon_typescript from '@assets/mastery-tree/typescript.svg';
-import icon_python from '@assets/mastery-tree/python.svg';
-import icon_cpp from '@assets/mastery-tree/cpp.svg';
-import icon_digital_art from '@assets/mastery-tree/digital-art.svg';
-import icon_ui from '@assets/mastery-tree/ui.svg';
-import icon_vector_graphics from '@assets/mastery-tree/vector-graphics.svg';
-import icon_live from '@assets/mastery-tree/live.svg';
+import svg_star from '@assets/skill-bar/star.svg'
+import svg_heart from '@assets/skill-bar/heart.svg'
+import icon_chinese from '@assets/mastery-tree/chinese.svg'
+import icon_english from '@assets/mastery-tree/english.svg'
+import icon_japanese from '@assets/mastery-tree/japanese.svg'
+import icon_mithril from '@assets/mastery-tree/mithril.svg'
+import icon_react from '@assets/mastery-tree/react.svg'
+import icon_vue from '@assets/mastery-tree/vue.svg'
+import icon_sass from '@assets/mastery-tree/sass.svg'
+import icon_vite from '@assets/mastery-tree/vite.svg'
+import icon_godot from '@assets/mastery-tree/godot.svg'
+import icon_typescript from '@assets/mastery-tree/typescript.svg'
+import icon_python from '@assets/mastery-tree/python.svg'
+import icon_cpp from '@assets/mastery-tree/cpp.svg'
+import icon_digital_art from '@assets/mastery-tree/digital-art.svg'
+import icon_ui from '@assets/mastery-tree/ui.svg'
+import icon_vector_graphics from '@assets/mastery-tree/vector-graphics.svg'
+import icon_live from '@assets/mastery-tree/live.svg'
 
 interface TreeItem {
   name: string
@@ -170,7 +170,7 @@ const TreeList: TreeAspect[] = [
       },
     ],
   },
-];
+]
 
 interface SkillLevelAttrs {
   level: number
@@ -181,13 +181,13 @@ interface SkillLevelAttrs {
 const SkillBar: m.ClosureComponent<SkillLevelAttrs> = () => {
   return {
     view({ attrs }) {
-      const width = attrs.width ?? 160;
-      const height = 24;
-      const margin = 12;
-      const length = width - 2 * margin;
+      const width = attrs.width ?? 160
+      const height = 24
+      const margin = 12
+      const length = width - 2 * margin
 
-      const styleLine = { stroke: '#ccc', strokeWidth: 2 };
-      const stylePoint = { fill: '#ccc' };
+      const styleLine = { stroke: '#ccc', strokeWidth: 2 }
+      const stylePoint = { fill: '#ccc' }
 
       return [
         m('svg', {
@@ -200,7 +200,7 @@ const SkillBar: m.ClosureComponent<SkillLevelAttrs> = () => {
             style: styleLine,
           }),
           ...[0, 1].map(i => {
-            const lx = Math.round(margin + length * i);
+            const lx = Math.round(margin + length * i)
 
             return [
               m('line', {
@@ -208,12 +208,12 @@ const SkillBar: m.ClosureComponent<SkillLevelAttrs> = () => {
                 x2: lx, y2: 18,
                 style: styleLine,
               }),
-            ];
+            ]
           }),
           ...[1, 2, 3, 4].map(i => {
-            const size = 5;
-            const px = Math.round(margin + length / 5 * i);
-            const py = height / 2;
+            const size = 5
+            const px = Math.round(margin + length / 5 * i)
+            const py = height / 2
 
             return [
               m('rect', {
@@ -224,7 +224,7 @@ const SkillBar: m.ClosureComponent<SkillLevelAttrs> = () => {
                 style: stylePoint,
                 transform: `rotate(45, ${px}, ${py})`,
               }),
-            ];
+            ]
           }),
           m('image', {
             x: margin + length / 5 * attrs.level - 8, y: 4,
@@ -232,10 +232,10 @@ const SkillBar: m.ClosureComponent<SkillLevelAttrs> = () => {
             href: attrs.fav ? svg_heart : svg_star,
           }),
         ]),
-      ];
+      ]
     },
-  };
-};
+  }
+}
 
 type MasteryItemNameAttrs = TreeItem
 
@@ -256,10 +256,10 @@ const MasteryItemName: m.ClosureComponent<MasteryItemNameAttrs> = () => {
         attrs.new && [
           m('div', { class: 'item-new' }, 'NEW'),
         ],
-      ];
+      ]
     },
-  };
-};
+  }
+}
 
 type MasteryItemAttrs = TreeItem
 
@@ -292,10 +292,10 @@ const MasteryItem: m.ClosureComponent<MasteryItemAttrs> = () => {
             }),
           ],
         ]),
-      ];
+      ]
     },
-  };
-};
+  }
+}
 
 type MasteryTreeAspectAttrs = TreeAspect
 
@@ -327,10 +327,10 @@ const MasteryTreeAspect: m.ClosureComponent<MasteryTreeAspectAttrs> = () => {
             ]),
           ]),
         ]),
-      ];
+      ]
     },
-  };
-};
+  }
+}
 
 const MasteryTree: m.ClosureComponent = () => {
   return {
@@ -342,9 +342,9 @@ const MasteryTree: m.ClosureComponent = () => {
             m(MasteryTreeAspect, { ...aspect }),
           ]),
         ]),
-      ];
+      ]
     },
-  };
-};
+  }
+}
 
-export default MasteryTree;
+export default MasteryTree

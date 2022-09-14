@@ -1,9 +1,9 @@
-import m from 'mithril';
-import './about.sass';
-import SectionTitle from './section-title';
-import LastUpdate from '../last-update';
+import m from 'mithril'
+import './about.sass'
+import SectionTitle from './section-title'
+import LastUpdate from '../last-update'
 
-import icon_un1c0de from '@assets/links/un1c0de.png';
+import icon_un1c0de from '@assets/links/un1c0de.png'
 
 interface LinksListItem {
   site: string,
@@ -17,7 +17,7 @@ const LinksList: LinksListItem[] = [
     icon: 'un1c0de',
     link: icon_un1c0de,
   },
-];
+]
 
 const About: m.ClosureComponent = () => {
   return {
@@ -56,9 +56,9 @@ const About: m.ClosureComponent = () => {
             m('div', `Last Update: ${LastUpdate}`),
           ]),
         ]),
-      ];
+      ]
     },
-  };
-};
+  }
+}
 
-export default About;
+export default About

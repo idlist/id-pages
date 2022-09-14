@@ -1,12 +1,12 @@
-import m from 'mithril';
-import './header.sass';
+import m from 'mithril'
+import './header.sass'
 
-import image_idlist from '@assets/idlist.png';
-import icon_email from '@assets/icons/email.svg';
-import icon_blog from '@assets/icons/blog.svg';
-import icon_twitter from '@assets/icons/twitter.svg';
-import icon_github from '@assets/icons/github.svg';
-import icon_soundcloud from '@assets/icons/soundcloud.svg';
+import image_idlist from '@assets/idlist.png'
+import icon_email from '@assets/icons/email.svg'
+import icon_blog from '@assets/icons/blog.svg'
+import icon_twitter from '@assets/icons/twitter.svg'
+import icon_github from '@assets/icons/github.svg'
+import icon_soundcloud from '@assets/icons/soundcloud.svg'
 
 interface ContactListItemAttrs {
   name: string
@@ -31,7 +31,7 @@ const ContactListContents: ContactListItemAttrs[] = [
     id: 'Reinventing the Wheel',
     link: 'https://blog.idl.ist/',
   },
-];
+]
 
 const SocialMediaContents: ContactListItemAttrs[] = [
   {
@@ -55,7 +55,7 @@ const SocialMediaContents: ContactListItemAttrs[] = [
     color: '#ED784A',
     link: 'https://soundcloud.com/idlist',
   },
-];
+]
 
 const ContactListItem: m.ClosureComponent<ContactListItemAttrs> = () => {
   return {
@@ -79,10 +79,10 @@ const ContactListItem: m.ClosureComponent<ContactListItemAttrs> = () => {
           }, attrs.name),
           m('div', { class: 'item-id' }, attrs.id),
         ]),
-      ];
+      ]
     },
-  };
-};
+  }
+}
 
 const Header: m.ClosureComponent = () => {
   return {
@@ -106,9 +106,9 @@ const Header: m.ClosureComponent = () => {
             ]),
           ]),
         ]),
-      ];
+      ]
     },
-  };
-};
+  }
+}
 
-export default Header;
+export default Header

@@ -1,3 +1,3 @@
-const LastUpdate = '2022 / 9 / 5';
+const LastUpdate = '2022 / 9 / 5'
 
-export default LastUpdate;
+export default LastUpdate

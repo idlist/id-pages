@@ -1,5 +1,5 @@
-import m from 'mithril';
-import './section-title.sass';
+import m from 'mithril'
+import './section-title.sass'
 
 interface SectionTitleAttrs {
   title?: string
@@ -20,9 +20,9 @@ const SectionTitle: m.ClosureComponent<SectionTitleAttrs> = () => {
               m('div', { class: 'section-title-divider' }),
             ],
         ]),
-      ];
+      ]
     },
-  };
-};
+  }
+}
 
-export default SectionTitle;
+export default SectionTitle
