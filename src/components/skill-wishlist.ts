@@ -2,9 +2,9 @@ import m from 'mithril'
 import './skill-wishlist.sass'
 import SectionTitle from './section-title'
 
-import icon_dart from '@assets/skill-wishlist/dart.svg'
-import icon_flutter from '@assets/skill-wishlist/flutter.svg'
-import icon_blender from '@assets/skill-wishlist/blender.svg'
+import icon_dart from '@/assets/skill-wishlist/dart.svg'
+import icon_flutter from '@/assets/skill-wishlist/flutter.svg'
+import icon_blender from '@/assets/skill-wishlist/blender.svg'
 
 interface WishlistSkill {
   name: string

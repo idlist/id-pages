@@ -3,7 +3,7 @@ import './about.sass'
 import SectionTitle from './section-title'
 import { LastUpdate, CopyrightYears } from '../constants'
 
-import icon_un1c0de from '@assets/links/un1c0de.png'
+import icon_un1c0de from '@/assets/links/un1c0de.png'
 
 interface LinksListItem {
   site: string,

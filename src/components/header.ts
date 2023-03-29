@@ -1,11 +1,12 @@
 import m from 'mithril'
 import './header.sass'
 
-import image_idlist from '@assets/idlist.png'
-import icon_email from '@assets/icons/email.svg'
-import icon_twitter from '@assets/icons/twitter.svg'
-import icon_github from '@assets/icons/github.svg'
-import icon_soundcloud from '@assets/icons/soundcloud.svg'
+import image_idlist from '@/assets/idlist.png'
+import icon_email from '@/assets/header/email.svg'
+import icon_twitter from '@/assets/header/twitter.svg'
+import icon_soundcloud from '@/assets/header/soundcloud.svg'
+import icon_github from '@/assets/header/github.svg'
+import icon_discord from '@/assets/header/discord.svg'
 
 interface ContactListItemAttrs {
   name: string
@@ -20,8 +21,15 @@ const ContactListContents: ContactListItemAttrs[] = [
     name: 'Email',
     icon: icon_email,
     id: 'i@idl.ist',
-    color: '#3A8FB7',
+    color: '#3081e3',
     link: 'mailto:i@idl.ist',
+  },
+  {
+    name: 'Discord',
+    icon: icon_discord,
+    id: 'idlist#6438',
+    color: '#7289DA',
+    link: 'https://discord.com/',
   },
 ]
 
@@ -30,13 +38,13 @@ const SocialMediaContents: ContactListItemAttrs[] = [
     name: 'Twitter',
     icon: icon_twitter,
     id: '@i_dlist',
-    color: '#58B2DC',
+    color: '#50b6e6',
     link: 'https://twitter.com/i_dlist',
   },
   {
     name: 'GitHub',
     icon: icon_github,
-    color: '#6F3381',
+    color: '#ae62c4',
     id: 'i\'DLisT',
     link: 'https://github.com/idlist',
   },
@@ -54,6 +62,16 @@ const ContactListItem: m.ClosureComponent<ContactListItemAttrs> = () => {
     view({ attrs }) {
       return [
         m('a', {
+          class: 'contact-list-item end',
+          href: attrs.link,
+          rel: 'noopener noreferer',
+        }, [
+          m('div', {
+            class: 'item-name',
+            style: { backgroundColor: attrs.color },
+          }, attrs.name),
+        ]),
+        m('a', {
           class: 'contact-list-item',
           href: attrs.link,
           rel: 'noopener noreferer',
@@ -65,10 +83,6 @@ const ContactListItem: m.ClosureComponent<ContactListItemAttrs> = () => {
               alt: attrs.name,
             }),
           ]),
-          m('div', {
-            class: 'item-name',
-            style: { backgroundColor: attrs.color },
-          }, attrs.name),
           m('div', { class: 'item-id' }, attrs.id),
         ]),
       ]

@@ -31,12 +31,15 @@
   padding: 1rem 1.5rem
 
   display: grid
+  grid-template-columns: min-content auto
   row-gap: 0.75rem
+  column-gap: 0.5rem
   align-items: center
   align-content: center
 
 .contact-list-divider
   margin: 0.125rem 0.5rem
+  grid-column: span 2
 
   border: none
   border-bottom: 1px solid var(--color-border)
@@ -47,6 +50,9 @@
   align-items: center
 
   text-decoration: none
+
+  &.end
+    justify-content: flex-end
 
   .item-icon
     width: 1.25rem
