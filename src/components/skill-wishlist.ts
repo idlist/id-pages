@@ -4,7 +4,6 @@ import SectionTitle from './section-title'
 
 import icon_dart from '@assets/skill-wishlist/dart.svg'
 import icon_flutter from '@assets/skill-wishlist/flutter.svg'
-import icon_rust from '@assets/skill-wishlist/rust.svg'
 import icon_blender from '@assets/skill-wishlist/blender.svg'
 
 interface WishlistSkill {
@@ -23,11 +22,6 @@ const WishlistContent: WishlistSkill[] = [
     name: 'Flutter',
     icon: icon_flutter,
     link: 'https://flutter.dev/',
-  },
-  {
-    name: 'Rust',
-    icon: icon_rust,
-    link: 'https://www.rust-lang.org/',
   },
   {
     name: 'Blender',

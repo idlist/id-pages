@@ -3,7 +3,6 @@ import './header.sass'
 
 import image_idlist from '@assets/idlist.png'
 import icon_email from '@assets/icons/email.svg'
-import icon_blog from '@assets/icons/blog.svg'
 import icon_twitter from '@assets/icons/twitter.svg'
 import icon_github from '@assets/icons/github.svg'
 import icon_soundcloud from '@assets/icons/soundcloud.svg'
@@ -20,16 +19,9 @@ const ContactListContents: ContactListItemAttrs[] = [
   {
     name: 'Email',
     icon: icon_email,
-    id: 'me@idl.ist',
+    id: 'i@idl.ist',
     color: '#3A8FB7',
-    link: 'mailto:me@idl.ist',
-  },
-  {
-    name: 'Blog',
-    icon: icon_blog,
-    color: '#00887d',
-    id: 'Reinventing the Wheel',
-    link: 'https://blog.idl.ist/',
+    link: 'mailto:i@idl.ist',
   },
 ]
 

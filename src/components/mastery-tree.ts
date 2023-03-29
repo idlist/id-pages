@@ -16,6 +16,7 @@ import icon_godot from '@assets/mastery-tree/godot.svg'
 import icon_typescript from '@assets/mastery-tree/typescript.svg'
 import icon_python from '@assets/mastery-tree/python.svg'
 import icon_cpp from '@assets/mastery-tree/cpp.svg'
+import icon_rust from '@assets/mastery-tree/rust.svg'
 import icon_digital_art from '@assets/mastery-tree/digital-art.svg'
 import icon_ui from '@assets/mastery-tree/ui.svg'
 import icon_vector_graphics from '@assets/mastery-tree/vector-graphics.svg'
@@ -68,20 +69,20 @@ const TreeList: TreeAspect[] = [
       {
         name: 'Mithril.js',
         icon: icon_mithril,
-        level: 4.5,
+        level: 4,
         fav: true,
         link: 'https://mithril.js.org/',
       },
       {
         name: 'React',
         icon: icon_react,
-        level: 3,
+        level: 2.5,
         link: 'https://reactjs.org/',
       },
       {
         name: 'Vue',
         icon: icon_vue,
-        level: 1,
+        level: 3.5,
         link: 'https://v3.vuejs.org/',
       },
       {
@@ -106,30 +107,39 @@ const TreeList: TreeAspect[] = [
       {
         name: 'Godot',
         icon: icon_godot,
-        level: 1.5,
+        level: 1,
         fav: true,
         link: 'https://godotengine.org/',
       },
     ],
   },
   {
-    title: 'Other Programmings',
+    title: 'Other PLs',
+    color: '#1A5969',
     contents: [
       {
         name: 'TypeScript',
         icon: icon_typescript,
         level: 4,
+        link: 'https://www.typescriptlang.org/',
       },
       {
         name: 'Python',
         icon: icon_python,
         level: 3,
+        link: 'https://www.python.org/',
       },
       {
         name: 'C++',
         icon: icon_cpp,
         level: 1,
+      },
+      {
+        name: 'Rust',
+        icon: icon_rust,
+        level: 0.5,
         new: true,
+        link: 'https://www.rust-lang.org/',
       },
     ],
   },
@@ -141,19 +151,19 @@ const TreeList: TreeAspect[] = [
       {
         name: 'Digital Art',
         icon: icon_digital_art,
-        level: 1.5,
+        level: 2,
         fav: true,
       },
       {
         name: 'UI / UX',
         icon: icon_ui,
-        level: 3,
+        level: 3.5,
         fav: true,
       },
       {
         name: 'Vector Graphics',
         icon: icon_vector_graphics,
-        level: 2,
+        level: 2.5,
       },
     ],
   },
