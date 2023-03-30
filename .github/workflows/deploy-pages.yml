@@ -29,13 +29,13 @@ jobs:
         run: npm ci
 
       - name: Build Pages
-        run: npm run build
+        run: npm run deploy
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist
+          folder: deploy
           clean: true
           clean-exclude: |
             CNAME

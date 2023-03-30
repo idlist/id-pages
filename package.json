@@ -18,6 +18,7 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
+    "deploy": "vite build --outDir deploy",
     "preview": "vite preview"
   },
   "dependencies": {
