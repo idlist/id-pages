@@ -114,7 +114,7 @@ const TreeList: TreeAspect[] = [
     ],
   },
   {
-    title: 'Other PLs',
+    title: 'Other PL',
     color: '#1A5969',
     contents: [
       {
