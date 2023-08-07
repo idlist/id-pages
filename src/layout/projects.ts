@@ -1,9 +1,9 @@
 import m from 'mithril'
-import './showcase.sass'
+import './projects.sass'
 import Header from '@/components/header'
 import Nav from '@/components/nav'
 
-const Showcase: m.ClosureComponent = () => {
+const Projects: m.ClosureComponent = () => {
   return {
     view() {
       return [
@@ -16,4 +16,4 @@ const Showcase: m.ClosureComponent = () => {
   }
 }
 
-export default Showcase
+export default Projects

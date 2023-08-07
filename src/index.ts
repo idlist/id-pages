@@ -1,9 +1,13 @@
 import m from 'mithril'
 import './index.sass'
-import RootLayout from './layout/root'
+import Root from './layout/root'
+import Showcase from './layout/showcase'
+import Projects from './layout/projects'
 
 const root = document.getElementById('root') as HTMLElement
 
 m.route(root, '/', {
-  '/': RootLayout,
+  '/': Root,
+  '/showcase': Showcase,
+  '/projects': Projects,
 })

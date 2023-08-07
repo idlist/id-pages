@@ -16,7 +16,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "deploy": "vite build --outDir deploy",
     "preview": "vite preview"
