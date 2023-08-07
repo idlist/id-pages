@@ -27,7 +27,7 @@ const ContactListContents: ContactListItemAttrs[] = [
   {
     name: 'Discord',
     icon: icon_discord,
-    id: 'idlist#6438',
+    id: 'i_dlist',
     color: '#7289DA',
     link: 'https://discord.com/',
   },
@@ -103,11 +103,11 @@ const Header: m.ClosureComponent = () => {
             }),
           ]),
           m('div', { class: 'contact-list' }, [
-            ...ContactListContents.map(item => [
+            ...ContactListContents.map((item) => [
               m(ContactListItem, { ...item }),
             ]),
             m('hr', { class: 'contact-list-divider' }),
-            ...SocialMediaContents.map(item => [
+            ...SocialMediaContents.map((item) => [
               m(ContactListItem, { ...item }),
             ]),
           ]),

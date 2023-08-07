@@ -85,7 +85,7 @@ const SkillWishlist: m.ClosureComponent = () => {
         m(SectionTitle, { title: 'Skill Wishlist' }),
         m('div', { class: 'skill-wishlist' }, [
           m('div', { class: 'skill-wishlist-list' }, [
-            ...WishlistContent.map(item => [
+            ...WishlistContent.map((item) => [
               m(SkillItem, { ...item }),
             ]),
           ]),

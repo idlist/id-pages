@@ -27,7 +27,7 @@ const About: m.ClosureComponent = () => {
         m('div', { class: 'about-links' }, [
           m('div', { class: 'title' }, 'Links'),
           m('div', { class: 'contents' }, [
-            ...LinksList.map(item => [
+            ...LinksList.map((item) => [
               m('a', {
                 class: 'contents-link',
                 href: item.link,

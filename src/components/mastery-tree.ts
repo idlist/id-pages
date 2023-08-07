@@ -209,7 +209,7 @@ const SkillBar: m.ClosureComponent<SkillLevelAttrs> = () => {
             x2: width - margin, y2: margin,
             style: styleLine,
           }),
-          ...[0, 1].map(i => {
+          ...[0, 1].map((i) => {
             const lx = Math.round(margin + length * i)
 
             return [
@@ -220,7 +220,7 @@ const SkillBar: m.ClosureComponent<SkillLevelAttrs> = () => {
               }),
             ]
           }),
-          ...[1, 2, 3, 4].map(i => {
+          ...[1, 2, 3, 4].map((i) => {
             const size = 5
             const px = Math.round(margin + length / 5 * i)
             const py = height / 2
@@ -332,7 +332,7 @@ const MasteryTreeAspect: m.ClosureComponent<MasteryTreeAspectAttrs> = () => {
             ],
           ]),
           m('div', { class: 'aspect-content' }, [
-            ...attrs.contents.map(item => [
+            ...attrs.contents.map((item) => [
               m(MasteryItem, { ...item }),
             ]),
           ]),
@@ -348,7 +348,7 @@ const MasteryTree: m.ClosureComponent = () => {
       return [
         m(SectionTitle, { title: 'Mastery Tree' }),
         m('div', { class: 'mastery-tree' }, [
-          ...TreeList.map(aspect => [
+          ...TreeList.map((aspect) => [
             m(MasteryTreeAspect, { ...aspect }),
           ]),
         ]),

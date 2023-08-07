@@ -1,9 +1,9 @@
 import m from 'mithril'
-import './root-layout.sass'
-import Header from './header'
-import MasteryTree from './mastery-tree'
-import SkillWishlist from './skill-wishlist'
-import About from './about'
+import './root.sass'
+import Header from '@/components/header'
+import MasteryTree from '@/components/mastery-tree'
+import SkillWishlist from '@/components/skill-wishlist'
+import About from '@/components/about'
 
 const RootLayout: m.ClosureComponent = () => {
   return {
