@@ -24,9 +24,22 @@ $screen-l: 1024px
 
 %card-container
   padding: 0.75rem 1rem
+
   border: 1px solid var(--color-border)
   border-radius: 1.5rem
   background-color: #fff
+
+%card-button
+  @extend %card-container
+
+  padding: 0.5rem 0.75rem
+  cursor: pointer
+
+  font-weight: 500
+  text-align: center
+  text-transform: uppercase
+  text-decoration: none
+  letter-spacing: 2px
 
 %default-link
   color: var(--color-text)

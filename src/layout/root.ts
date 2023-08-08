@@ -5,6 +5,7 @@ import Nav from '@/components/nav'
 import MasteryTree from '@/components/mastery-tree'
 import SkillWishlist from '@/components/skill-wishlist'
 import About from '@/components/about'
+import BackToTop from '@/components/back-to-top'
 
 const Root: m.ClosureComponent = () => {
   return {
@@ -16,6 +17,7 @@ const Root: m.ClosureComponent = () => {
           m(MasteryTree),
           m(SkillWishlist),
           m(About),
+          m(BackToTop),
         ]),
       ]
     },

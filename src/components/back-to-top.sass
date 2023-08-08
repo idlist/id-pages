@@ -1,22 +1,18 @@
 @use '../variables' as *
 
-.nav
+.back-to-top
   display: flex
   justify-content: center
-  row-gap: 0.5rem
-  column-gap: 0.5rem
-  flex-wrap: wrap
 
-  margin-top: 2rem
-  margin-bottom: 3rem
+  margin-bottom: 1rem
 
-  &-item
+  &-button
     @extend %card-button
 
     display: flex
     align-items: center
     column-gap: 0.25rem
 
-  &-item-icon
-    height: 1.5rem
+  &-icon
     width: 1.5rem
+    height: 1.5rem
