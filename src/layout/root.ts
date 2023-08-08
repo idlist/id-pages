@@ -5,7 +5,7 @@ import Nav from '@/components/nav'
 import MasteryTree from '@/components/mastery-tree'
 import SkillWishlist from '@/components/skill-wishlist'
 import About from '@/components/about'
-import BackToTop from '@/components/back-to-top'
+import BackToTop from '@/components/footer'
 
 const Root: m.ClosureComponent = () => {
   return {
