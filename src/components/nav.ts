@@ -19,7 +19,7 @@ const NavItem: m.ClosureComponent<NavItemAttrs> = () => {
           m('img', {
             class: 'nav-item-icon',
             src: attrs.icon,
-            alt: attrs.icon,
+            alt: attrs.name,
           }),
           attrs.name,
         ]),
@@ -51,7 +51,7 @@ const Nav: m.ClosureComponent = () => {
     view() {
       return [
         m('div', { class: 'nav' }, [
-          ...NavItemList.map((i) => m(NavItem, i)),
+          ...NavItemList.map((item) => m(NavItem, item)),
         ]),
       ]
     },
