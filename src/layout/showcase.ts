@@ -3,6 +3,7 @@ import './showcase.sass'
 import Header from '@/components/header'
 import Nav from '@/components/nav'
 import MusicCompose from '@/components/music-compose'
+import LogoDesign from '@/components/logo-design'
 import BackToTop from '@/components/footer'
 
 const Showcase: m.ClosureComponent = () => {
@@ -13,6 +14,7 @@ const Showcase: m.ClosureComponent = () => {
           m(Header),
           m(Nav),
           m(MusicCompose),
+          m(LogoDesign),
           m(BackToTop),
         ]),
       ]

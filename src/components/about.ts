@@ -13,8 +13,8 @@ interface LinksListItem {
 const LinksList: LinksListItem[] = [
   {
     site: 'UN1C0DE',
-    icon: 'un1c0de',
-    link: icon_un1c0de,
+    icon: icon_un1c0de,
+    link: 'https://un1c0de.xyz/',
   },
 ]
 
@@ -36,7 +36,7 @@ const About: m.ClosureComponent = () => {
               }, [
                 m('img', {
                   class: 'contents-link-image',
-                  src: item.link,
+                  src: item.icon,
                   alt: item.site,
                 }),
               ]),

@@ -2,6 +2,7 @@ import m from 'mithril'
 import './music-compose.sass'
 import SectionTitle from './section-title'
 import OuterLink from './outer-link'
+import CommentsDivider from './comments-divider'
 
 import cover_dreamless from '@/assets/music-compose/dreamless.jpg'
 import cover_cogimp from '@/assets/music-compose/cognitive-impairment.jpg'
@@ -63,11 +64,7 @@ const MusicCard: m.ClosureComponent<MusicCardAttrs> = () => {
             m('div', { class: 'music-link-list' }, [
               ...attrs.links.map((item) => m(MusicLink, item)),
             ]),
-            m('div', { class: 'music-card-divider' }, [
-              m('div', { class: 'music-card-divider-line' }),
-              m('div', { class: 'music-card-divider-text' }, 'comments'),
-              m('div', { class: 'music-card-divider-line' }),
-            ]),
+            m(CommentsDivider),
             m('div', { class: 'music-card-comments' }, children),
           ]),
         ]),
@@ -172,7 +169,7 @@ const MusicShowcaseData: MusicCardAttrs[] = [
         '.',
       ]),
       m('p', [
-        'Stretched the original song to 2 times slower, ',
+        'Stretched the original song to two times slower, ',
         'and sliced it into a somewhat old-school House style. ',
         'And that\'s it. ',
       ]),
