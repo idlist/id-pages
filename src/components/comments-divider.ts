@@ -12,7 +12,6 @@ interface CommentsDividerAttrs {
 const CommentsDivider: m.ClosureComponent<CommentsDividerAttrs> = () => {
   return {
     view({ attrs }) {
-      console.log(attrs)
       return [
         m('div', {
           class: 'comments-divider',

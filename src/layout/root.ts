@@ -1,11 +1,11 @@
 import m from 'mithril'
 import './root.sass'
-import Header from '@/components/header'
-import Nav from '@/components/nav'
-import MasteryTree from '@/components/mastery-tree'
-import SkillWishlist from '@/components/skill-wishlist'
-import About from '@/components/about'
-import BackToTop from '@/components/footer'
+import Header from '@/sections/header'
+import Nav from '@/sections/nav'
+import MasteryTree from '@/sections/mastery-tree'
+import SkillWishlist from '@/sections/skill-wishlist'
+import About from '@/sections/about'
+import BackToTop from '@/sections/footer'
 
 const Root: m.ClosureComponent = () => {
   return {

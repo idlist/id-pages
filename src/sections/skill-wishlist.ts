@@ -1,6 +1,6 @@
 import m from 'mithril'
 import './skill-wishlist.sass'
-import SectionTitle from './section-title'
+import SectionTitle from '@/components/section-title'
 
 import icon_dart from '@/assets/skill-wishlist/dart.svg'
 import icon_flutter from '@/assets/skill-wishlist/flutter.svg'

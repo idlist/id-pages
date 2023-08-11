@@ -2,8 +2,8 @@ import m from 'mithril'
 import stream from 'mithril/stream'
 import { throttle } from 'lodash-es'
 import './logo-design.sass'
-import SectionTitle from './section-title'
-import CommentsDivider from './comments-divider'
+import SectionTitle from '@/components/section-title'
+import CommentsDivider from '@/components/comments-divider'
 
 import logo_idlist from '@/assets/logo-design/idlist.png'
 import logo_eazytune from '@/assets/logo-design/eazy-tune.png'
@@ -49,7 +49,7 @@ const LogoComments: m.ClosureComponent<LogoCommentsAttrs> = () => {
       return [
         m('div', { class: 'logo-comments' }, [
           m('h3', { class: 'logo-comments-title' }, attrs.name),
-          m(CommentsDivider, { margin: { x: '0', y: '0' } }),
+          m(CommentsDivider, { margin: { y: '0' } }),
           children,
         ]),
       ]
@@ -67,14 +67,37 @@ const LogoList: LogoListItem[] = [
   {
     path: logo_idlist,
     name: 'i\'DLisT',
+    comments: [
+      m('p', [
+        'Personal logo. The design of this logo dates back to senior high school, ',
+        'and has been continued using till now.',
+      ]),
+      m('p', [
+        'Read as ',
+        m('span', { class: 'logo-comments-bg' }, '/\'aɪdlɪst/'),
+        '("I\'d list"). Doesn\'t mean "list of IDs".',
+      ]),
+    ],
   },
   {
     path: logo_eazytune,
     name: 'Eazy Tune',
+    comments: [
+      m('p', [
+        'A logo for a personal hobby group that also dates back to senior high school.',
+      ]),
+      m('p', [
+        'The group does still exists, but has changed a lot and is currently inactive. ',
+        'Maybe one day it would get revived (maybe).',
+      ]),
+    ],
   },
   {
     path: logo_echquale,
     name: 'echquale',
+    comments: [
+
+    ],
   },
   {
     path: logo_rewl,

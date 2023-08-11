@@ -1,8 +1,8 @@
 import m from 'mithril'
 import './music-compose.sass'
-import SectionTitle from './section-title'
-import OuterLink from './outer-link'
-import CommentsDivider from './comments-divider'
+import SectionTitle from '@/components/section-title'
+import OuterLink from '@/components/outer-link'
+import CommentsDivider from '@/components/comments-divider'
 
 import cover_dreamless from '@/assets/music-compose/dreamless.jpg'
 import cover_cogimp from '@/assets/music-compose/cognitive-impairment.jpg'

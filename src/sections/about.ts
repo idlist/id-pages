@@ -1,6 +1,6 @@
 import m from 'mithril'
 import './about.sass'
-import SectionTitle from './section-title'
+import SectionTitle from '@/components/section-title'
 
 import icon_un1c0de from '@/assets/links/un1c0de.png'
 

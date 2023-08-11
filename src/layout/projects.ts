@@ -1,8 +1,8 @@
 import m from 'mithril'
 import './projects.sass'
-import Header from '@/components/header'
-import Nav from '@/components/nav'
-import BackToTop from '@/components/footer'
+import Header from '@/sections/header'
+import Nav from '@/sections/nav'
+import BackToTop from '@/sections/footer'
 
 const Projects: m.ClosureComponent = () => {
   return {

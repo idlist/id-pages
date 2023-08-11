@@ -1,6 +1,6 @@
 import m from 'mithril'
 import './mastery-tree.sass'
-import SectionTitle from './section-title'
+import SectionTitle from '@/components/section-title'
 
 import svg_star from '@/assets/skill-bar/star.svg'
 import svg_heart from '@/assets/skill-bar/heart.svg'

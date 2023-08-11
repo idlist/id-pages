@@ -95,12 +95,22 @@ const Header: m.ClosureComponent = () => {
     view() {
       return [
         m('header', { class: 'header' }, [
-          m('div', { class: 'header-icon' }, [
-            m('img', {
-              class: 'header-icon-image',
-              src: image_idlist,
-              alt: 'idlist-icon',
-            }),
+          m('div', { class: 'header-left' }, [
+            m('div', { class: 'header-icon' }, [
+              m('img', {
+                class: 'header-icon-image',
+                src: image_idlist,
+                alt: 'idlist-icon',
+              }),
+            ]),
+            m('div', { class: 'header-brief' }, [
+              m('p', [
+                m('span', { class: 'gender-icon' }, '♂'),
+                m('span', { class: 'vertical-divider' }),
+                '25 y.o.',
+              ]),
+              m('p', { class: 'slogan' }, '/*IDEALIST*/'),
+            ]),
           ]),
           m('div', { class: 'contact-list' }, [
             ...ContactListContents.map((item) => [
