@@ -1,9 +1,12 @@
 import m from 'mithril'
-import stream from 'mithril/stream'
+import Stream from 'mithril/stream'
 import { throttle } from 'lodash-es'
 import './logo-design.sass'
+
+import { wait } from '@/utils/wait'
 import SectionTitle from '@/components/section-title'
 import CommentsDivider from '@/components/comments-divider'
+import Collapse from '@/components/collapse'
 
 import logo_idlist from '@/assets/logo-design/idlist.png'
 import logo_eazytune from '@/assets/logo-design/eazy-tune.png'
@@ -39,18 +42,32 @@ const LogoCard: m.ClosureComponent<LogoCardAttrs> = () => {
   }
 }
 
-interface LogoCommentsAttrs {
+interface LogoCommentAttrs {
   name: string
 }
 
-const LogoComments: m.ClosureComponent<LogoCommentsAttrs> = () => {
+const LogoComment: m.ClosureComponent<LogoCommentAttrs> = () => {
+  const show = Stream<unknown>()
+
   return {
+    oncreate({ attrs }) {
+      show(attrs.name)
+    },
+    onupdate({ attrs }) {
+      show(attrs.name)
+    },
+    onbeforeremove() {
+      show(null)
+      return wait(250)
+    },
     view({ attrs, children }) {
       return [
-        m('div', { class: 'logo-comments' }, [
-          m('h3', { class: 'logo-comments-title' }, attrs.name),
-          m(CommentsDivider, { margin: { y: '0' } }),
-          children,
+        m(Collapse, { show: show }, [
+          m('div', { class: 'logo-comment' }, [
+            m('h3', { class: 'logo-comment-title' }, attrs.name),
+            m(CommentsDivider, { margin: { y: '0' } }),
+            children,
+          ]),
         ]),
       ]
     },
@@ -74,7 +91,7 @@ const LogoList: LogoListItem[] = [
       ]),
       m('p', [
         'Read as ',
-        m('span', { class: 'logo-comments-bg' }, '/\'aɪdlɪst/'),
+        m('span', { class: 'logo-comment-bg' }, '/\'aɪdlɪst/'),
         '("I\'d list"). Doesn\'t mean "list of IDs".',
       ]),
     ],
@@ -96,7 +113,6 @@ const LogoList: LogoListItem[] = [
     path: logo_echquale,
     name: 'echquale',
     comments: [
-
     ],
   },
   {
@@ -117,6 +133,33 @@ const LogoList: LogoListItem[] = [
   },
 ]
 
+interface LogoCommentHolderAttrs {
+  row: number
+  state: boolean
+  name: string
+}
+
+const LogoCommentHolder: m.ClosureComponent<LogoCommentHolderAttrs> = () => {
+  return {
+    view({ attrs, children }) {
+      return [
+        m('div', {
+          class: 'logo-comment-spanner',
+        }, attrs.state
+          ? m(LogoComment, {
+            key: `comments-${attrs.row}`,
+            name: attrs.name,
+          }, children)
+          : m('div', {
+            key: `placeholder-${attrs.row}`,
+            class: 'logo-comment-spanner',
+          }),
+        ),
+      ]
+    },
+  }
+}
+
 interface CardCommentType {
   name: string
   comments?: m.Children
@@ -124,11 +167,11 @@ interface CardCommentType {
 
 const LogoDesign: m.ClosureComponent = () => {
   const nCards = LogoList.length
-  const nColumns = stream<number>()
+  const nColumns = Stream<number>()
   const nRows = nColumns.map((value) => Math.ceil(nCards / value))
 
-  const statusCards: boolean[] = Array(nCards)
-  let statusRows: boolean[] = Array(nRows())
+  const stateCards: boolean[] = Array(nCards)
+  let stateRows: boolean[] = Array(nRows())
 
   const cardComment: CardCommentType = {
     name: '',
@@ -149,8 +192,8 @@ const LogoDesign: m.ClosureComponent = () => {
     const width = window.innerWidth
     nColumns(getColumns(width))
 
-    statusCards.fill(false)
-    statusRows = Array(nRows()).fill(false)
+    stateCards.fill(false)
+    stateRows = Array(nRows()).fill(false)
   }
 
   window.addEventListener('resize', throttle(() => {
@@ -164,18 +207,18 @@ const LogoDesign: m.ClosureComponent = () => {
 
   const toggleCardComment = (row: number, index: number, value: boolean) => {
     if (value) {
-      statusCards.fill(false)
-      statusCards[index] = true
+      stateCards.fill(false)
+      stateCards[index] = true
 
       const content = LogoList[index]
       cardComment.name = content.name
       cardComment.comments = content.comments
 
-      statusRows.fill(false)
-      statusRows[row] = true
+      stateRows.fill(false)
+      stateRows[row] = true
     } else {
-      statusCards[index] = false
-      statusRows.fill(false)
+      stateCards[index] = false
+      stateRows.fill(false)
     }
   }
 
@@ -193,28 +236,32 @@ const LogoDesign: m.ClosureComponent = () => {
             const column = index % nColumns()
             const row = Math.floor(index / nColumns())
 
-            const vm: m.Children = [
+            return [
               m(LogoCard, {
+                key: item.name,
                 path: item.path,
                 name: item.name,
-                selected: statusCards[index],
+                selected: stateCards[index],
                 onselected(value) { toggleCardComment(row, index, value) },
               }),
+              (column == nColumns() - 1)
+                ? m(LogoCommentHolder, {
+                  key: `spanner-${row}`,
+                  row,
+                  state: stateRows[row],
+                  name: cardComment.name,
+                }, cardComment.comments)
+                : m.fragment({ key: 'skip' }, []),
             ]
-
-            if (column == nColumns() - 1 && statusRows[row]) {
-              vm.push(m(LogoComments, {
-                name: cardComment.name,
-              }, cardComment.comments))
-            }
-
-            return vm
           }),
-          isCardDangle() && statusRows[nRows() - 1] && [
-            m(LogoComments, {
+          isCardDangle()
+            ? m(LogoCommentHolder, {
+              key: `spanner-${nRows() - 1}`,
+              row: nRows() - 1,
+              state: stateRows[nRows() - 1],
               name: cardComment.name,
-            }, cardComment.comments),
-          ],
+            }, cardComment.comments)
+            : m.fragment({ key: 'skip' }, []),
         ]),
       ]
     },

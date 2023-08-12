@@ -3,7 +3,7 @@
 .logo-design
   display: grid
   grid-template-columns: repeat(4, 1fr)
-  row-gap: 1rem
+  row-gap: 0.5rem
   column-gap: 1rem
 
   @media (max-width: $screen-l)
@@ -35,10 +35,14 @@
   &.selected
     box-shadow: 0 0 8px var(--color-border)
 
-.logo-comments
-  @extend %card-container
-
+.logo-comment-spanner
   grid-column: 1 / -1
+
+.logo-comment-placeholder
+  grid-column: 1 / -1
+
+.logo-comment
+  @extend %card-container
 
   &-title
     margin: 0.5rem 0

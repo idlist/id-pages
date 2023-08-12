@@ -25,6 +25,7 @@
     "lodash-es": "^4.17.21",
     "mithril": "^2.2.2",
     "normalize.css": "^8.0.1",
+    "popmotion": "^11.0.5",
     "sass": "^1.64.2"
   },
   "devDependencies": {
