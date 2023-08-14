@@ -168,28 +168,30 @@ const LogoList: LogoListItem[] = [
   },
 ]
 
-interface LogoCommentTgAttrs {
+interface LogoCommentRendererAttrs {
+  shouldRender?: boolean
   row: number
   state: boolean
   name: string
 }
 
-const LogoCommentTg: m.ClosureComponent<LogoCommentTgAttrs> = () => {
+const LogoCommentRenderer: m.ClosureComponent<LogoCommentRendererAttrs> = () => {
   return {
     view({ attrs, children }) {
       return [
-        m('div', {
-          class: 'logo-comment-tg',
-        }, attrs.state
-          ? m(LogoComment, {
-            key: `comments-${attrs.row}`,
-            name: attrs.name,
-          }, children)
-          : m('div', {
-            key: `placeholder-${attrs.row}`,
-            class: 'logo-comment-tg',
-          }),
-        ),
+        attrs.shouldRender
+          ? m('div', {
+            class: 'logo-comment-renderer',
+          }, attrs.state
+            ? m(LogoComment, {
+              key: `comments-${attrs.row}`,
+              name: attrs.name,
+            }, children)
+            : m('div', {
+              key: `placeholder-${attrs.row}`,
+            }),
+          )
+          : m.fragment({ key: 'none' }, []),
       ]
     },
   }
@@ -279,24 +281,22 @@ const LogoDesign: m.ClosureComponent = () => {
                 selected: stateCards[index],
                 onselected(value) { toggleCardComment(row, index, value) },
               }),
-              (column == nColumns() - 1)
-                ? m(LogoCommentTg, {
-                  key: `spanner-${row}`,
-                  row,
-                  state: stateRows[row],
-                  name: cardComment.name,
-                }, cardComment.comments)
-                : m.fragment({ key: 'skip' }, []),
+              m(LogoCommentRenderer, {
+                shouldRender: column == nColumns() - 1,
+                key: `spanner-${row}`,
+                row,
+                state: stateRows[row],
+                name: cardComment.name,
+              }, cardComment.comments),
             ]
           }),
-          isCardDangle()
-            ? m(LogoCommentTg, {
-              key: `spanner-${nRows() - 1}`,
-              row: nRows() - 1,
-              state: stateRows[nRows() - 1],
-              name: cardComment.name,
-            }, cardComment.comments)
-            : m.fragment({ key: 'skip' }, []),
+          m(LogoCommentRenderer, {
+            shouldRender: isCardDangle(),
+            key: `spanner-${nRows() - 1}`,
+            row: nRows() - 1,
+            state: stateRows[nRows() - 1],
+            name: cardComment.name,
+          }, cardComment.comments),
         ]),
       ]
     },
