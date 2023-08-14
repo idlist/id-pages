@@ -16,16 +16,18 @@ const Collapse: m.ClosureComponent<CollapseAttrs> = () => {
   let show: Stream<unknown>
   let showPrev: unknown
   let el: HTMLDivElement
+  let currentAnimation: ReturnType<typeof animate>
 
   const animateCollapse = (scroll: number, current: unknown) => {
     if (showPrev === current) {
       return
     }
 
+    currentAnimation?.stop()
     const dest = `${scroll}px`
 
     if (current && heightRecord() != dest) {
-      animate({
+      currentAnimation = animate({
         from: heightRecord(),
         to: dest,
         duration: 250,
@@ -35,7 +37,7 @@ const Collapse: m.ClosureComponent<CollapseAttrs> = () => {
       })
     }
     if (!current) {
-      animate({
+      currentAnimation = animate({
         from: heightRecord(),
         to: '0px',
         duration: 250,

@@ -104,7 +104,7 @@ const LogoList: LogoListItem[] = [
         'A logo for a personal hobby group that also dates back to senior high school.',
       ]),
       m('p', [
-        'The group does still exists, but has changed a lot and is currently inactive. ',
+        'The group does still exist, but has changed a lot and is currently inactive. ',
         'Maybe one day it would get revived (maybe).',
       ]),
     ],
@@ -113,38 +113,73 @@ const LogoList: LogoListItem[] = [
     path: logo_echquale,
     name: 'echquale',
     comments: [
+      m('p', [
+        'Designed for a discontinued burner account. ',
+        'The idea is to have a smiling face hidden in the logo.',
+      ]),
     ],
   },
   {
     path: logo_rewl,
     name: 'rewl',
+    comments: [
+      m('p', [
+        'A senseless abbreviation for "Reinventing the wheel". ',
+        'Used for my code libraries that reinvent the wheels, ',
+        'though hasn\'t really been updated for a long time.',
+      ]),
+      m('p', [
+        'And thus it has a letter "R" inside a 6-axle wheel. ',
+      ]),
+    ],
   },
   {
     path: logo_bouncehall,
     name: 'Bounce Hall',
+    comments: [
+      m('p', [
+        'A logo for an indie project yet to be published.',
+      ]),
+    ],
   },
   {
     path: logo_cursive,
     name: 'Curs1ve',
+    comments: [
+      m('p', [
+        'A logo for a 2-man game dev team including me.',
+      ]),
+      m('p', [
+        'Though "cursive" itself is a word, the team name takes from "Recursive", ',
+        'which also the inspiration for the design of the letter "C".',
+      ]),
+    ],
   },
   {
     path: logo_studio96,
     name: 'Studio 96th',
+    comments: [
+      m('p', [
+        'Designed as a joke logo for certain game studio, ',
+        'as their name is not "Studio 96th". ',
+        'It\'s their boss\'s nickname that contains the number "96".',
+      ]),
+    ],
   },
 ]
 
-interface LogoCommentHolderAttrs {
+interface LogoCommentTgAttrs {
   row: number
   state: boolean
   name: string
 }
 
-const LogoCommentHolder: m.ClosureComponent<LogoCommentHolderAttrs> = () => {
+const LogoCommentTg: m.ClosureComponent<LogoCommentTgAttrs> = () => {
   return {
     view({ attrs, children }) {
       return [
         m('div', {
-          class: 'logo-comment-spanner',
+          class: 'logo-comment-tg',
         }, attrs.state
           ? m(LogoComment, {
             key: `comments-${attrs.row}`,
@@ -152,7 +187,7 @@ const LogoCommentHolder: m.ClosureComponent<LogoCommentHolderAttrs> = () => {
           }, children)
           : m('div', {
             key: `placeholder-${attrs.row}`,
-            class: 'logo-comment-spanner',
+            class: 'logo-comment-tg',
           }),
         ),
       ]
@@ -245,7 +280,7 @@ const LogoDesign: m.ClosureComponent = () => {
                 onselected(value) { toggleCardComment(row, index, value) },
               }),
               (column == nColumns() - 1)
-                ? m(LogoCommentHolder, {
+                ? m(LogoCommentTg, {
                   key: `spanner-${row}`,
                   row,
                   state: stateRows[row],
@@ -255,7 +290,7 @@ const LogoDesign: m.ClosureComponent = () => {
             ]
           }),
           isCardDangle()
-            ? m(LogoCommentHolder, {
+            ? m(LogoCommentTg, {
               key: `spanner-${nRows() - 1}`,
               row: nRows() - 1,
               state: stateRows[nRows() - 1],
