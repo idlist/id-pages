@@ -1,6 +1,7 @@
 import m from 'mithril'
 import './music-compose.sass'
 import SectionTitle from '@/components/section-title'
+import IconLink, { IconLinkAttrs } from '@/components/icon-link'
 import OuterLink from '@/components/outer-link'
 import CommentsDivider from '@/components/comments-divider'
 
@@ -13,38 +14,11 @@ import icon_bandcamp from '@/assets/header/bandcamp.svg'
 import icon_bilibili from '@/assets/header/bilibili.svg'
 import icon_youtube from '@/assets/header/youtube.svg'
 
-interface MusicLinkAttrs {
-  icon: string
-  name: string
-  link: string
-}
-
-const MusicLink: m.ClosureComponent<MusicLinkAttrs> = () => {
-  return {
-    view({ attrs }) {
-      return [
-        m('a', {
-          class: 'music-link',
-          href: attrs.link,
-          rel: 'noopener noreferer',
-        }, [
-          m('img', {
-            class: 'music-link-icon',
-            src: attrs.icon,
-            alt: attrs.name,
-          }),
-          m('span', attrs.name),
-        ]),
-      ]
-    },
-  }
-}
-
 interface MusicCardAttrs {
   cover: string
   title: string
   year: number
-  links: MusicLinkAttrs[],
+  links: IconLinkAttrs[],
   comments?: m.Children,
 }
 
@@ -62,9 +36,9 @@ const MusicCard: m.ClosureComponent<MusicCardAttrs> = () => {
             m('h3', { class: 'music-card-title' }, attrs.title),
             m('div', { class: 'music-card-year' }, attrs.year),
             m('div', { class: 'music-link-list' }, [
-              ...attrs.links.map((item) => m(MusicLink, item)),
+              ...attrs.links.map((item) => m(IconLink, item)),
             ]),
-            m(CommentsDivider),
+            m(CommentsDivider, { margin: { y: '2rem' } }),
             m('div', { class: 'music-card-comments' }, children),
           ]),
         ]),

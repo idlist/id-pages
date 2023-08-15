@@ -150,7 +150,7 @@ const LogoList: LogoListItem[] = [
         'A logo for a 2-man game dev team including me.',
       ]),
       m('p', [
-        'Though "cursive" itself is a word, the team name takes from "Recursive", ',
+        'Though "Cursive" itself is a word, the team name takes from "Recursive", ',
         'which also the inspiration for the design of the letter "C".',
       ]),
     ],
