@@ -22,7 +22,7 @@ const OuterLink: m.ClosureComponent<OuterLinkAttrs> = () => {
             src: icon_link,
             alt: 'outer link',
           }),
-          m('span', children),
+          m('span', children && attrs.link),
         ]),
       ]
     },

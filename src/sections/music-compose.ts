@@ -39,7 +39,7 @@ const MusicCard: m.ClosureComponent<MusicCardAttrs> = () => {
               ...attrs.links.map((item) => m(IconLink, item)),
             ]),
             m(CommentsDivider, { margin: { y: '2rem' } }),
-            m('div', { class: 'music-card-comments' }, children),
+            children,
           ]),
         ]),
       ]
