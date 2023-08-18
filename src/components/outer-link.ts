@@ -10,6 +10,8 @@ interface OuterLinkAttrs {
 const OuterLink: m.ClosureComponent<OuterLinkAttrs> = () => {
   return {
     view({ attrs, children }) {
+      const hasChildren = (children as m.ChildArray).length != 0
+
       return [
         m('a', {
           class: 'outer-link',
@@ -22,7 +24,7 @@ const OuterLink: m.ClosureComponent<OuterLinkAttrs> = () => {
             src: icon_link,
             alt: 'outer link',
           }),
-          m('span', children && attrs.link),
+          m('span', hasChildren ? children : attrs.link),
         ]),
       ]
     },
