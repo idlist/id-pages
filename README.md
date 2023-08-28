@@ -1,3 +1,3 @@
-# id-pages-simple
+# id-pages
 
 The many times personal homepage.

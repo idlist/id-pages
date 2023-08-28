@@ -18,7 +18,6 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "deploy": "vite build --outDir deploy",
     "preview": "vite preview"
   },
   "dependencies": {
