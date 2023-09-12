@@ -1,4 +1,5 @@
 import fs from 'fs/promises'
+import dedent from 'dedent'
 
 interface YearMonthDay {
   year: number
@@ -17,9 +18,9 @@ export const ymd = (date: Date): YearMonthDay => {
 const date = ymd(new Date())
 const update = `${date.year} / ${date.month} / ${date.day}`
 
-const content = `
-export const LastUpdate = '${update}'
-export const CopyrightYears = '2022 - ${date.year}'
-`
+const content = dedent`
+  export const LastUpdate = '${update}'
+  export const CopyrightYears = '2022 - ${date.year}'
+  `
 
 await fs.writeFile('src/constants.ts', content, { encoding: 'utf8' })

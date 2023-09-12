@@ -3,10 +3,11 @@ import './header.sass'
 
 import image_idlist from '@/assets/idlist.png'
 import icon_email from '@/assets/header/email.svg'
+import icon_blog from '@/assets/header/blog.svg'
+import icon_discord from '@/assets/header/discord.svg'
 import icon_twitter from '@/assets/header/twitter.svg'
 import icon_soundcloud from '@/assets/header/soundcloud.svg'
 import icon_github from '@/assets/header/github.svg'
-import icon_discord from '@/assets/header/discord.svg'
 
 interface ContactListItemAttrs {
   name: string
@@ -23,6 +24,13 @@ const ContactListContents: ContactListItemAttrs[] = [
     id: 'i@idl.ist',
     color: '#3081e3',
     link: 'mailto:i@idl.ist',
+  },
+  {
+    name: 'Blog',
+    icon: icon_blog,
+    id: 'i\'D Blog',
+    color: '#53A820',
+    link: 'https://blog.idl.ist/',
   },
   {
     name: 'Discord',
