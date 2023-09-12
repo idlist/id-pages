@@ -1,0 +1,25 @@
+import fs from 'fs/promises'
+
+interface YearMonthDay {
+  year: number
+  month: number
+  day: number
+}
+
+export const ymd = (date: Date): YearMonthDay => {
+  return {
+    year: date.getFullYear(),
+    month: date.getMonth() + 1,
+    day: date.getDate(),
+  }
+}
+
+const date = ymd(new Date())
+const update = `${date.year} / ${date.month} / ${date.day}`
+
+const content = `
+export const LastUpdate = '${update}'
+export const CopyrightYears = '2022 - ${date.year}'
+`
+
+await fs.writeFile('src/constants.ts', content, { encoding: 'utf8' })
