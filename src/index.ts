@@ -1,13 +1,8 @@
-import m from 'mithril'
 import './index.sass'
-import Root from './layout/root'
-import Showcase from './layout/showcase'
-import ListOfProjects from './layout/projects'
+import m from 'mithril'
+import Main from './main'
+
+m.route.prefix = '#'
 
 const root = document.getElementById('root') as HTMLElement
-
-m.route(root, '/', {
-  '/': Root,
-  '/showcase': Showcase,
-  '/projects': ListOfProjects,
-})
+m.mount(root, Main)

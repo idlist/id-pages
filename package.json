@@ -19,7 +19,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "prepare": "husky install",
-    "generate": "tsm scripts/generate.ts && git add src/constants.ts"
+    "generate": "tsm scripts/generate.ts && git add src/generated.ts"
   },
   "dependencies": {
     "lodash-es": "^4.17.21",

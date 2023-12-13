@@ -23,4 +23,4 @@ const content = dedent`
   export const CopyrightYears = '2022 - ${date.year}'
   `
 
-await fs.writeFile('src/constants.ts', content, { encoding: 'utf8' })
+await fs.writeFile('src/generated.ts', content, { encoding: 'utf8' })

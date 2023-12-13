@@ -1,0 +1,17 @@
+{
+	"Closure Component": {
+		"scope": "javascript,typescript",
+		"prefix": "component",
+		"body": [
+			"const ${1:Component}: m.ClosureComponent = () => {",
+			"\treturn {"
+			"\t\tview() {"
+			"\t\t\treturn ["
+			"\t\t\t]"
+			"\t\t},"
+			"\t}"
+			"}"
+		],
+		"description": "Mithril.js Closure Component"
+	}
+}

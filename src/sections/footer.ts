@@ -1,6 +1,6 @@
 import m from 'mithril'
 import './footer.sass'
-import { LastUpdate, CopyrightYears } from '@/constants'
+import { LastUpdate, CopyrightYears } from '@/generated'
 
 import icon_arrow_up from '@/assets/arrow-up.svg'
 
